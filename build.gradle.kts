@@ -46,6 +46,11 @@ dependencies {
 	modCompileOnly("ca.stellardrift:confabricate:$confabricateVersion")
 	modImplementation("me.shedaniel.cloth:cloth-config-fabric:$clothConfigVersion")
 	modImplementation("com.terraformersmc:modmenu:$modMenuVersion")
+
+	if (project.hasProperty("sodiumVersionRuntime")) {
+		val sodiumVersionRuntime: String by project
+		modRuntimeOnly("maven.modrinth:sodium:$sodiumVersionRuntime")
+	}
 }
 
 tasks.processResources {
